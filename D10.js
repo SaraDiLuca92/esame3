@@ -200,8 +200,8 @@ console.log(howManyDays(date1, date2));
 //   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi
 //   è il tuo compleanno, falso negli altri casi.
 // */
-/*const birthdays = [
-  { name: "Bob Marley", birthmonth: "12", birthdate: "18" },
+const birthdays = [
+  { name: "Bob Marley", birthmonth: "11", birthdate: "18" },
   { name: "Peter Pan", birthmonth: "08", birthdate: "04" },
 ];
 
@@ -221,7 +221,7 @@ const isTodayMyBirthday = function (x) {
   }
 };
 
-console.log(isTodayMyBirthday(birthdays[0]));*/
+console.log(isTodayMyBirthday(birthdays[0]));
 
 // // Arrays & Oggetti
 
@@ -238,15 +238,9 @@ const personaggio = {
   elemento: "luna",
   familio: "gatto",
 };
-
-const anni = "anni";
-
-const deleteProp = function (oggetto, stringa) {
-  if (propName(oggetto) === stringa) {
-    return delete oggetto;
-  }
-};
-console.log(deleteProp(personaggio.anni, anni));
+let key = "anni";
+const deleteProp = delete personaggio[key];
+console.log(personaggio);
 
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
@@ -423,6 +417,12 @@ console.log(sumAllTheYears(movies));
 //   ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 // */
 
+let toSearch = "Avengers"; //Will check if title have text 'search'
+
+const searchByTitle = movies.filter((o) => o.Title.includes(toSearch));
+
+console.log(searchByTitle);
+
 // /* ESERCIZIO 18
 //   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e
 //   ritorna un oggetto contenente due array: "match" e "unmatch".
@@ -440,14 +440,14 @@ console.log(sumAllTheYears(movies));
 // /* ESERCIZIO 20
 //   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 // */
-// const container = document.getElementById("container");
-// container();
+const container = document.getElementById("container");
+container();
 
 // /* ESERCIZIO 21
 //   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 // */
-// const td = document.getElementsByTagName("td");
-// td();
+const td = document.getElementsByTagName("td");
+td();
 
 // /* ESERCIZIO 22
 //   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td>
@@ -457,28 +457,28 @@ console.log(sumAllTheYears(movies));
 // /* ESERCIZIO 23
 //   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 // */
-// const div = document.getElementsByTagName("a");
-// a.style.background = `#ff0000`;
-// div();
+const div = document.getElementsByTagName("a");
+a.style.background = `#ff0000`;
+div();
 
 // /* ESERCIZIO 24
 //   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 // */
 
-// const addelement = document.getElementById("mylist");
-// document.createElement("li");
-// mylist.appendChild(li);
+const addelement = document.getElementById("mylist");
+document.createElement("li");
+mylist.appendChild(li);
 
 // /* ESERCIZIO 25
 //   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 // */
-// const svuota = $("#mylist").empty();
+const svuota = $("#mylist").empty();
 
 // /* ESERCIZIO 26
 //   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 // */
-// const addClass = document.getElementsByTagName("tr");
-// tr.classlist.add("test");
+const addClass = document.getElementsByTagName("tr");
+tr.classlist.add("test");
 
 // // [EXTRA] JS Avanzato
 
@@ -509,17 +509,17 @@ console.log(sumAllTheYears(movies));
 // /* ESERCIZIO 29
 //   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 // */
-// var isPrimeNumber = (number) => {
-//   if (number == 1 || number == 2) {
-//     return true;
-//   }
-//   for (var i = 2; i < number; i++) {
-//     if (number % i == 0) {
-//       return false;
-//     }
-//   }
-//   return true;
-// };
-// console.log(isPrimeNumber(3));
+const isItPrime = (number) => {
+  if (number == 1 || number == 2) {
+    return true;
+  }
+  for (var i = 2; i < number; i++) {
+    if (number % i == 0) {
+      return false;
+    }
+  }
+  return true;
+};
+console.log(isItPrime(3));
 
 // /* Questo array viene usato per gli esercizi. Non modificarlo. */
